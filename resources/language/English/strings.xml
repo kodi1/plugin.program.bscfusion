@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Plugin settings strings -->
+    <string id="30301">User</string>
+    <string id="30302">Password</string>
+    <string id="30303">Refresh Time</string>
+    <string id="30304">Time Out Http</string>
+    <string id="30305">Base Url</string>
+    <string id="30306">Enable Debug</string>
+    <string id="30307">Epg Offset</string>
+    <string id="30308">Apply View Mode - Confluence only</string>
+    <string id="30309">View Mode</string>
+    <string id="30310">Show XXX</string>
+</strings>

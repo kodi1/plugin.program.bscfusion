@@ -1,0 +1,10 @@
+[B]*** 0.0.7 ***[/B]
+- Filter adult content
+
+[B]*** 0.0.5 ***[/B]
+- Update to new BSC API
+
+[B]*** 0.0.3 ***[/B]
+- Change default timeout to 10s
+- thumbnailImage change
+- Initial release

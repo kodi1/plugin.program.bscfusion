@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <!-- General -->
+    <category label="30300">
+      <setting label="30301" type="text"   id="username" default=""/>
+      <setting label="30302" type="text"   id="password" option="hidden" default=""/>
+      <setting label="30303" type="slider" id="refresh" default="60" range="30,10,600" option="int" />
+      <setting label="30304" type="slider" id="timeout" default="10.0" range="0.5,0.5,20" option="float" />
+      <setting label="30305" type="text"   id="base" default="https://api.iptv.bulsat.com"/>
+      <setting label="30306" type="bool"   id="dbg" default="false"/>
+      <setting label="30307" type="slider" id="offset" default="0" range="-360,15,360" option="int"/>
+      <setting label="30308" type="bool"   id="viewset" default="true"/>
+      <setting label="30309" type="enum"   id="viewmode" values="Default|List|Big List|Thumbnail|Poster Wrap|Fanart|Media Info|Media Info 2|Media info 3" default="6"/>
+      <setting label="30310" type="bool"   id="xxx" default="false"/>
+      <setting label=""      type="bool"   id="firstrun" visible="false" default="true"/>
+    </category>
+</settings>
