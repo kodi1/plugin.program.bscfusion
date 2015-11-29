@@ -281,12 +281,12 @@ class dodat():
 
         if self.__gen_m3u:
           if not map:
-            pl = pl + '#EXTINF:-1 radio="%s" group-title="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], ch_group_name, ch['epg_name'], ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            pl = pl + '#EXTINF:-1 radio="%s" group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], ch_group_name, ch['epg_name'], ch['epg_name'], ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
           else:
             e_map = map.get(ch['epg_name'], {ch['epg_name']:{'id': ch['epg_name'], 'offset': '0'}})
             gid = e_map.get('id', ch['epg_name'])
             offset = e_map.get('offset', '0')
-            pl = pl + '#EXTINF:-1 radio="%s" tvg-shift=%s group-title="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], offset, ch_group_name, gid, ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            pl = pl + '#EXTINF:-1 radio="%s" tvg-shift=%s group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], offset, ch_group_name, ch['epg_name'], gid, ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
 
         if self.__gen_jd:
           jdump[ch['epg_name']]=ch['epg_name']
