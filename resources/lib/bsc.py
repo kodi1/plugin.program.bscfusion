@@ -289,6 +289,13 @@ class dodat():
       if self.__gen_jd:
         jdump = {}
       dat = [x for x in self.__tv_list if (x['pg'] == 'free' or self.__x)]
+      
+      #================================================>>
+      pl_ls = []
+      ch_sort_ls = open(os.path.join(self.__path, '', 'ch_sort.txt'), 'r').read().splitlines()
+      ch_rmve_ls = open(os.path.join(self.__path, '', 'ch_rmve.txt'), 'r').read().splitlines()
+      #================================================<<
+      
       for i, ch in enumerate(dat):
         if self.__cb:
           self.__cb(
@@ -304,16 +311,32 @@ class dodat():
           ch_group_name = self.__en_group_ch
         else:
           ch_group_name = ch['genre']
+          
+        #================================================>>
+        ch_id = str(ch['epg_name'])
+        if ch_id in ch_sort_ls:
+          ch_nmbr = str(ch_sort_ls.index(ch_id)).rjust(4, '0')
+        else:
+          ch_nmbr = 1000 + i
+        #================================================<<
 
-        if self.__gen_m3u:
+        if self.__gen_m3u and not ch_id in ch_rmve_ls: #============== <<<<
           if not map:
-            pl = pl + '#EXTINF:-1 radio="%s" group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], ch_group_name, ch['epg_name'], ch['epg_name'], ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            #pl = pl + '#EXTINF:-1 radio="%s" group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], ch_group_name, ch['epg_name'], ch['epg_name'], ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            #================================================>>
+            pl_str = '#EXTINF:%s radio="%s" group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch_nmbr, ch['radio'], ch_group_name, ch['epg_name'], ch['epg_name'], ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            pl_ls.append(pl_str)
+            #================================================<<
           else:
             e_map = map.get(ch['epg_name'], {ch['epg_name']:{'id': ch['epg_name'], 'offset': '0', 'ch_logo': ch['epg_name']}})
             gid = e_map.get('id', ch['epg_name'])
             offset = e_map.get('offset', '0')
             logo = e_map.get('ch_logo', ch['epg_name'])
-            pl = pl + '#EXTINF:-1 radio="%s" tvg-shift=%s group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], offset, ch_group_name, logo, gid, ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            #pl = pl + '#EXTINF:-1 radio="%s" tvg-shift=%s group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch['radio'], offset, ch_group_name, logo, gid, ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            #================================================>>
+            pl_str = '#EXTINF:%s radio="%s" tvg-shift=%s group-title="%s" tvg-logo="%s" tvg-id="%s",%s\n%s|User-Agent=%s\n' % (ch_nmbr, ch['radio'], offset, ch_group_name, logo, gid, ch['title'], ch['sources'], urllib.quote_plus(self.__UA['User-Agent']))
+            pl_ls.append(pl_str)
+            #================================================<<
 
         if self.__gen_jd:
           jdump[ch['epg_name']]=ch['epg_name']
@@ -338,6 +361,10 @@ class dodat():
                             'rating': [{'value': ch['pg']}]}
                           )
 
+      #================================================>>
+      pl_ls.sort()
+      pl = u'#EXTM3U\n' + ''.join(pl_ls)
+      #================================================<<
       if self.__gen_m3u:
         f_m3u =  open(os.path.join(self.__path, '', 'bulsat.m3u'), 'wb+')
         f_m3u.write(pl.encode(self.__char_set, 'replace'))
