@@ -74,7 +74,13 @@ class dodat():
     self.__MAP_URL = map_url
     self.__gen_jd = False
 
-    print self.__gen_m3u
+    self.__s = requests.Session()
+
+    if agent_id != 'pcweb':
+      self.__URL_LOGIN = base + '/?auth'
+    else:
+      self.__URL_LOGIN = base + '/auth'
+
     if agent_id != 'pcweb':
       self.__UA['User-Agent'] = agent_id
 
@@ -115,11 +121,25 @@ class dodat():
     with open(os.path.join(self.__path, '', 'data.dat'), 'r') as f:
       self.__js = json.load(f)
 
+  def __log_out(self):
+    r = self.__s.post(self.__URL_LOGIN, timeout=self.__t,
+          headers=self.__UA, files={'logout': ['','1']})
+
+    self.__log_dat(r.request.headers)
+    self.__log_dat(r.request.body)
+
+    if r.status_code == requests.codes.ok and r.json()['Logged'] == 'false':
+      self.__log_dat('Logout ok')
+      if self.__cb:
+        self.__cb({'pr': 100, 'str': 'Logout ok'})
+    else:
+      self.__log_dat('Logout Fail')
+      raise Exception("LogoutFail")
+
   def __goforit(self):
     if self.__cb:
       self.__cb({'pr': 10, 'str': 'Session'})
-    s = requests.Session()
-    r = s.post(self.__URL_LOGIN, timeout=self.__t,
+    r = self.__s.post(self.__URL_LOGIN, timeout=self.__t,
                 headers=self.__UA)
 
     if r.status_code == requests.codes.ok:
@@ -128,7 +148,7 @@ class dodat():
       self.__log_in['key'] = r.headers['challenge']
       self.__log_in['session'] = r.headers['ssbulsatapi']
 
-      s.headers.update({'SSBULSATAPI': self.__log_in['session']})
+      self.__s.headers.update({'SSBULSATAPI': self.__log_in['session']})
 
       _text = self.__log_in['pw'] + (self.__BLOCK_SIZE - len(self.__log_in['pw']) % self.__BLOCK_SIZE) * '\0'
 
@@ -141,7 +161,7 @@ class dodat():
       if self.__cb:
         self.__cb({'pr': 30, 'str': 'Login start'})
 
-      r = s.post(self.__URL_LOGIN, timeout=self.__t,
+      r = self.__s.post(self.__URL_LOGIN, timeout=self.__t,
                   headers=self.__UA, files=self.__p_data)
 
       self.__log_dat(r.request.headers)
@@ -155,10 +175,10 @@ class dodat():
           if self.__cb:
             self.__cb({'pr': 50, 'str': 'Login ok'})
 
-          s.headers.update({'Access-Control-Request-Method': 'POST'})
-          s.headers.update({'Access-Control-Request-Headers': 'ssbulsatapi'})
+          self.__s.headers.update({'Access-Control-Request-Method': 'POST'})
+          self.__s.headers.update({'Access-Control-Request-Headers': 'ssbulsatapi'})
 
-          r = s.options(self.__URL_LIST, timeout=self.__t,
+          r = self.__s.options(self.__URL_LIST, timeout=self.__t,
                           headers=self.__UA)
 
           self.__log_dat(r.request.headers)
@@ -168,11 +188,12 @@ class dodat():
           if self.__cb:
             self.__cb({'pr': 70, 'str': 'Fetch data'})
 
-          r = s.post(self.__URL_LIST, timeout=self.__t,
+          r = self.__s.post(self.__URL_LIST, timeout=self.__t,
                       headers=self.__UA)
 
           self.__log_dat(r.request.headers)
           self.__log_dat(r.headers)
+
           if r.status_code == requests.codes.ok:
             self.__char_set = r.headers['content-type'].split('charset=')[1]
             self.__log_dat('get data ok')
@@ -181,7 +202,7 @@ class dodat():
             self.__log_dat(self.__js)
 
             if self.__cb:
-              self.__cb({'pr': 100, 'str': 'Fetch data done'})
+              self.__cb({'pr': 90, 'str': 'Fetch data done'})
 
             if self.__gen_epg:
               for i, ch in enumerate(self.__tv_list):
@@ -209,6 +230,11 @@ class dodat():
 
             from HTMLParser import HTMLParser as h
             self.__js = json.loads(h().unescape(json.dumps(self.__js).decode(self.__char_set)))
+
+          self.__log_out()
+          if r.status_code != requests.codes.ok:
+            self.__log_dat('Error status code: %d' % (r.status_code, ))
+            raise Exception("FetchFail")
 
         else:
           raise Exception("LoginFail")
