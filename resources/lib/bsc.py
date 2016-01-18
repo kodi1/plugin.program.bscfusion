@@ -9,6 +9,7 @@ import gzip
 import xmltv
 import urllib
 import simplejson as json
+from operator import itemgetter
 
 class dodat():
   def __init__(self,
@@ -225,7 +226,7 @@ class dodat():
                                 }
                             )
                   if r.status_code == requests.codes.ok:
-                    ch['program'] = r.json().items()[0][1]['programme']
+                    ch['program'] = sorted(r.json().items()[0][1]['programme'], key=itemgetter('start'))
 
             from HTMLParser import HTMLParser as h
             self.__js = json.loads(h().unescape(json.dumps(self.__js).decode(self.__char_set)))
@@ -288,6 +289,16 @@ class dodat():
       if self.__gen_jd:
         jdump = {}
       dat = [x for x in self.__tv_list if (x['pg'] == 'free' or self.__x)]
+
+      if self.__gen_epg:
+        for i, ch in enumerate(dat):
+          w.addChannel(
+                      {'display-name': [(ch['title'], u'bg')],
+                      'icon': [{'src': ch['logo_selected']}],
+                      'id': ch['epg_name'],
+                      'url': ['https://test.iptv.bulsat.com']}
+                      )
+
       for i, ch in enumerate(dat):
         if self.__cb:
           self.__cb(
@@ -318,12 +329,6 @@ class dodat():
           jdump[ch['epg_name']]=ch['epg_name']
 
         if self.__gen_epg:
-          w.addChannel(
-                      {'display-name': [(ch['title'], u'bg')],
-                      'icon': [{'src': ch['logo_selected']}],
-                      'id': ch['epg_name'],
-                      'url': ['https://test.iptv.bulsat.com']}
-                      )
           if ch.has_key('program'):
             for p in ch['program']:
               w.addProgramme(
