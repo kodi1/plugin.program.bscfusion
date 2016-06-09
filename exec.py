@@ -173,6 +173,8 @@ try:
       if __addon__.getSetting('en_reload_pvr')== 'true':
         dbg_msg('Reload PVR')
         update('reload_pvr', __ua_os[__addon__.getSetting('dev_id')]['osid'])
+        xbmc.executebuiltin('XBMC.StopPVRManager')
+        xbmc.sleep(3000)
         xbmc.executebuiltin('XBMC.StartPVRManager')
 
 except Exception, e:
