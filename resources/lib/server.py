@@ -11,51 +11,26 @@ Send a POST request::
     curl -d "foo=bar&bin=baz" curl http://localhost:8888
 """
 
-from BaseHTTPServer import HTTPServer
-from BaseHTTPServer import BaseHTTPRequestHandler
-import time
+from http.server import HTTPServer
+from http.server import BaseHTTPRequestHandler
 import threading
 import bsc
-import simplejson as json
 import os
+import simplejson as json
 
 ch_cb = None
 log_cb = None
 my_serv = None
-name = None
-ddd = None
-dumper_path = None
-dmp = 'dumper'
 
 def my_log (fmt, data):
     if log_cb:
         log_cb(fmt, data)
 
-def add_dumper(s):
-    if os.path.exists(dumper_path):
-        with open(dumper_path, 'r') as t:
-          l = t.read() % s._datas['ua']
-
-        path = os.path.join(s._kwa['path'], dmp)
-        if os.path.exists(path):
-            with open(path, 'r+b') as f:
-                if l == f.read():
-                    return
-                else:
-                    f.seek(0)
-                    f.write(l)
-
-        with open(path, 'w') as f:
-            f.write(l)
-            os.chmod(path, 0777)
-    else:
-        raise Exception('%s\nTemplate non found:' % dumper_path)
-
 def reboot(s, arg= None):
     s.send_response(200)
     s.send_header("Content-type", "text/html")
     s.end_headers()
-    s.wfile.write("<html><body><h1>restart!</h1></body></html>")
+    s.wfile.write(b"<html><body><h1>restart!</h1></body></html>")
 
     def rst(arg):
         thr = threading.current_thread()
@@ -67,65 +42,64 @@ def reboot(s, arg= None):
     t.start()
 
 def get_id(s, arg):
-    s.send_response(302)
-    s.send_header("Content-type", "application/x-mpegurl")
-    s.send_header("Location", s.server.d.get('dat', {}).get(arg, {'url': 'http://google.bg'})['url'])
-    s.end_headers()
+    if check_ua(s):
+        s.send_response(302)
+        s.send_header("Content-type", "application/x-mpegurl")
+        s.send_header("Location", s.server.d.get('dat', {}).get(arg, {'url': 'http://google.bg'})['url'])
+        s.end_headers()
+    else:
+        err_responce(s)
 
 def err_responce(s):
     s.send_response(404)
     s.send_header("Content-type", "text/html")
     s.end_headers()
-    s.wfile.write("<html><body><h1>Error!</h1></body></html>")
-    s.wfile.write("Path:\n%s\nHeader:\n%s" % (s.path, s.headers))
+    s.wfile.write(b"<html><body><h1>Error!</h1></body></html>")
+    s.wfile.write(bytes("Path:\n%s\nHeader:\n%s" % (s.path, s.headers), 'utf-8'))
 
 def pls(s):
-    _list = '#EXTM3U\n\n'
+    with open(os.path.join(s.server.d['path'], 'mapch.json'), 'r') as f:
+      ch_map = json.load(f)
+    if check_ua(s):
+        _list = '#EXTM3U\n\n'
+        for k, v in s.server.d['dat'].items():
+            _radio = 'False'
+            if 'Радио' in v['group']:
+                _radio = 'True'
 
-    if 'Kodi' in s.headers['User-Agent'] or 'TVH' in s.headers['User-Agent']:
-      for k, v in s.server.d['dat'].iteritems():
-          _radio = 'False'
-          if u'Радио' in v['group']:
-              _radio = 'True'
+            remap = ch_map.get(v['id'], {'id': v['id'], 'logo': '%s.png' % v['id'], 'title': v['title'], 'group': v['group']})
 
-          _list += '#EXTINF:-1 radio="%s" group-title="%s" tvg-id="%s",%s\n' % (_radio, v['group'], v['id'], v['title'],)
-          _list += 'http://%s/id/%s\n' % ( s.headers['Host'], v['id'])
+            nameepg = remap.get('id', v['id'])
+            logo = remap.get('logo', '%s.png' % v['id'])
+            title = remap.get('title', v['title'])
+            group = remap.get('group' , v['group'])
 
-    s.send_response(200)
-    s.send_header("Content-type", "application/x-mpegurl")
-    s.end_headers()
-    s.wfile.write(_list.encode('utf-8'))
+            _list += '#EXTINF:-1 radio="%s" tvh-tags="%s" tvg-id="%s" tvg-logo="%s" tvh-epg="off",%s\n' % (_radio, group, nameepg, logo, title,)
+            #_list += 'http://%s/id/%s|User-Agent=%s\n' % ( s.headers['Host'], v['id'], s.server.d['ua'])
+            _list += 'pipe:///usr/bin/ffmpeg -loglevel fatal -ignore_unknown -headers "User-Agent: %s" -i http://%s/id/%s -map 0 -c copy -metadata service_provider=bsc -metadata service_name=%s -tune zerolatency -f mpegts pipe:1\n'  % (s.server.d['ua'], s.headers['Host'], v['id'], v['id'])
 
-def dump_ch(s):
-    _json_data = {
-                    "service": "bsc_iptv",
-                    "list": []
-                  }
+        s.send_response(200)
+        s.send_header("Content-type", "application/x-mpegurl")
+        s.end_headers()
+        s.wfile.write(_list.encode('utf-8'))
+    else:
+        err_responce(s)
 
-    for k, v in s.server.d['dat'].iteritems():
-        l = {
-            'mux_url': u'pipe://%s %s %s' % (os.path.join(s.server.d['path'], dmp), s.headers['Host'], v['id']),
-            'mux_name': v['id'],
-            'tag': v['group'],
-            'title': v['title'],
-            'ch_idx': v['ch_idx'],
-        }
-        _json_data['list'].append(l)
+def check_ua(s):
+    if s.headers['User-Agent'] in s.server.d['ua']:
+        return True
 
-    s.send_response(200)
-    s.send_header("Content-type", "text/json; charset=UTF-8")
-    s.end_headers()
-    s.wfile.write(json.dumps(_json_data))
+    for a in ['Kodi', 'TVH']:
+        if a in s.headers['User-Agent']:
+            return True
 
 map_cmd = {
     'reboot' : reboot,
     'id': get_id,
-    'dumpch': dump_ch,
-    'm3u8' : pls,
+    'bsc' : pls,
     }
 
 class MyHandler(BaseHTTPRequestHandler):
-
     def do_GET(self):
       spath = self.path.split("/")
       if len(spath) == 2:
@@ -169,33 +143,16 @@ class serv():
     def start (self):
         my_log("%s", "Start server")
 
-        if ddd:
-            dp = ddd()
-            dp.create(heading = name)
-
-            def progress_cb (a):
-                _str = name
-                if a.has_key('idx') and a.has_key('max'):
-                    _str += ' %s of %d' % (a['idx'], a['max'])
-                    dp.update(a['pr'], _str  , a['str'])
-
-            self._kwa['proc_cb'] = progress_cb
-
-        b = bsc.dodat(**self._kwa)
-        self._datas['dat'], self._datas['ua']= b.gen_all()
-
-        add_dumper(self)
+        self.b = bsc.dodat(**self._kwa)
+        self._datas['dat'], self._datas['ua']= self.b.gen_all()
 
         self._stop = threading.Event()
         self._work = threading.Thread(target=worker, name="Httpd", kwargs={"serv": self._server, "stop":  self._stop})
         self._work.start()
 
-        if ddd:
-            time.sleep(1)
-            dp.close()
-
     def __stop (self):
         my_log("%s", "Stop server")
+        self.b.log_out()
         self._stop.set()
         self._server.shutdown()
         self._work.join()
