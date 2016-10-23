@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ffmpeg -user-agent "%s" -loglevel fatal -i http://$1/id/$2 -vcodec copy -acodec copy -metadata service_provider=bsc -metadata service_name=$2 -f mpegts pipe:1

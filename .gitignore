@@ -58,5 +58,4 @@ target/
 *.kate-swp
 /tmp
 /dumper
-/ch_dump
 /dbg.py

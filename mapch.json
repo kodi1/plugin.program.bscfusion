@@ -1,0 +1,1023 @@
+{
+  "24_kitchen": {
+    "id": "24kitchen",
+    "logo": "24kitchen.png",
+    "title": "24 Kitchen"
+  },
+  "24_techno": {
+    "id": "24 Техно",
+    "logo": "https://iptvx.one/icn/texno-24.png",
+    "title": "24 техно",
+    "group": "Научни"
+  },
+  "359tv_hd": {
+    "id": "",
+    "logo": "",
+    "title": "CODE FASHION TV"
+  },
+  "360tunebox": {
+    "id": "360TuneBoxHD",
+    "logo": "360tunebox.png",
+    "title": "360TuneBox HD"
+  },
+  "agro_tv_hd": {
+    "id": "agroTV",
+    "logo": "agrotv.png",
+    "title": "Agro TV"
+  },
+  "al_jazeera": {
+    "id": "AlJazeera",
+    "logo": "aljazeera.png",
+    "title": "Al Jazeera"
+  },
+  "alfa": {
+    "id": "Alfa",
+    "logo": "alfa.png",
+    "title": "Alfa"
+  },
+  "alpha_radio": {
+    "id": "",
+    "logo": "",
+    "title": "ALPHA radio"
+  },
+  "amc": {
+    "id": "amc",
+    "logo": "amc.png",
+    "title": "AMC"
+  },
+  "ams_hd": {
+    "id": "AutoMotorSport",
+    "logo": "automotorsport.png",
+    "title": "AMS HD"
+  },
+  "argosaronikos": {
+    "id": "",
+    "logo": "",
+    "title": "radio Argosaronikos"
+  },
+  "avto_moto_bg_hd": {
+    "id": "MotoSportHD",
+    "logo": "motosport.png",
+    "title": "Мотоспорт HD"
+  },
+  "axn": {
+    "id": "AXN",
+    "logo": "axn.png",
+    "title": "AXN"
+  },
+  "b1b_action": {
+    "id": "B1BActionTV",
+    "logo": "b1bactiontv.png",
+    "title": "b1b Action"
+  },
+  "babytv": {
+    "id": "BabyTV",
+    "logo": "babytv.png",
+    "title": "Baby tv"
+  },
+  "balkanica_hd": {
+    "id": "Balkanika",
+    "logo": "balkanika.png",
+    "title": "Balkanica HD"
+  },
+  "belle_amie": {
+    "id": "",
+    "logo": "",
+    "title": "Belle Amie"
+  },
+  "bg_music_channel_hd": {
+    "id": "BGMusicChannel",
+    "logo": "bgmusicchannel.png",
+    "title": "BG Music Channel HD"
+  },
+  "bg_top_music": {
+    "id": "BGTOPMUSIC",
+    "logo": "bgtopmusic.png",
+    "title": "BG Top Music"
+  },
+  "bgradio": {
+    "id": "BGRadio",
+    "logo": "bgradio.png",
+    "title": "BG radio"
+  },
+  "bhtv": {
+    "id": "",
+    "logo": "",
+    "title": "BHTV"
+  },
+  "bit": {
+    "id": "BiT",
+    "logo": "bit.png",
+    "title": "BiT"
+  },
+  "bloomberg_tv": {
+    "id": "Bloomberg",
+    "logo": "bloombergtvbulgaria.png",
+    "title": "Bloomberg TV Bulgaria"
+  },
+  "bn_music": {
+    "id": "music",
+    "logo": "music.png",
+    "title": "BN Music"
+  },
+  "bnt1_hd": {
+    "id": "BNT1",
+    "logo": "bnt1.png",
+    "title": "БНТ 1"
+  },
+  "bnt2": {
+    "id": "BNT2",
+    "logo": "bnt2.png",
+    "title": "БНТ 2"
+  },
+  "bnt_hd": {
+    "id": "BNTHD",
+    "logo": "bnthd.png",
+    "title": "БНТ 3"
+  },
+  "bntworld": {
+    "id": "BNTWorld",
+    "logo": "bntworld.png",
+    "title": "BNT 4"
+  },
+  "boomerang": {
+    "id": "Boomerang",
+    "logo": "boomerang.png",
+    "title": "Boomerang"
+  },
+  "box_tv_hd": {
+    "id": "BoxTV",
+    "logo": "boxtv.png",
+    "title": "BOX TV HD"
+  },
+  "bstv": {
+    "id": "",
+    "logo": "",
+    "title": "BSTV"
+  },
+  "btv": {
+    "id": "bTV",
+    "logo": "btv.png",
+    "title": "bTV HD"
+  },
+  "btv_action": {
+    "id": "bTVAction",
+    "logo": "btvaction.png",
+    "title": "bTV Action"
+  },
+  "btv_cinema": {
+    "id": "bTVCinema",
+    "logo": "btvcinema.png",
+    "title": "bTV Cinema"
+  },
+  "btv_comedy": {
+    "id": "bTVComedy",
+    "logo": "btvcomedy.png",
+    "title": "bTV Comedy"
+  },
+  "btv_lady": {
+    "id": "bTVLady",
+    "logo": "btvlady.png",
+    "title": "bTV Lady"
+  },
+  "btv_radio": {
+    "id": "",
+    "logo": "",
+    "title": "BTV radio"
+  },
+  "bul_hist_hd": {
+    "id": "BulHistory",
+    "logo": "bghistory.png",
+    "title": "Българска история HD"
+  },
+  "bulgaria24": {
+    "id": "news",
+    "logo": "bulgaria24.png",
+    "title": "Bulgaria 24"
+  },
+  "bulgaria_on_air": {
+    "id": "BulgariaOnAir",
+    "logo": " bgonair.png",
+    "title": "Bulgaria ON Air"
+  },
+  "bulsatinfo": {
+    "id": "",
+    "logo": "",
+    "title": "Bulsat Info Channel"
+  },
+  "cherno_more": {
+    "id": "ChernoMore",
+    "logo": "chernomore.png",
+    "title": "Черно Море"
+  },
+  "city": {
+    "id": "city",
+    "logo": "citytv.png",
+    "title": "Radio City"
+  },
+  "city_tv": {
+    "id": "City",
+    "logo": "citytv.png",
+    "title": "City TV"
+  },
+  "classic_fm": {
+    "id": "",
+    "logo": "",
+    "title": "Classic FM"
+  },
+  "cn": {
+    "id": "CartoonNetwork",
+    "logo": "cartoonnetwork.png",
+    "title": "CN"
+  },
+  "cn_eng": {
+    "id": "",
+    "logo": "",
+    "title": "CN en"
+  },
+  "ctc_international": {
+    "id": "",
+    "logo": "",
+    "title": "СТС International"
+  },
+  "da_vinci_learning": {
+    "id": "DaVinciLearning",
+    "logo": "davincilearning.png",
+    "title": "Da Vinci"
+  },
+  "darik": {
+    "id": "DarikRadioTV",
+    "logo": "darikradiotv.png",
+    "title": "Дарик радио"
+  },
+  "destination_bg_hd": {
+    "id": "DestinationBG",
+    "logo": "destinationbg.png",
+    "title": "Destination BG HD"
+  },
+  "detski_mir": {
+    "id": "detski_mir",
+    "logo": "",
+    "title": "Детский Мир"
+  },
+  "diema": {
+    "id": "Diema",
+    "logo": "diema.png",
+    "title": "Diema"
+  },
+  "diema_family": {
+    "id": "DiemaFamily",
+    "logo": "diemafamily.png",
+    "title": "Diema Family"
+  },
+  "discovery": {
+    "id": "Discovery",
+    "logo": "discovery.png",
+    "title": "Discovery channel"
+  },
+  "discovery_hd": {
+    "id": "DiscoveryHDShowcase",
+    "logo": " discoveryhdshowcase.png",
+    "title": "Discovery Showcase"
+  },
+  "discovery_science": {
+    "id": "DiscoveryScience",
+    "logo": "discoveryscience.png",
+    "title": "Discovery Science"
+  },
+  "disney_channel": {
+    "id": "Disney",
+    "logo": "disney.png",
+    "title": "Disney channel"
+  },
+  "disney_junior": {
+    "id": "DisneyJunior",
+    "logo": "disneyjunior.png",
+    "title": "Disney Junior"
+  },
+  "dm_sat": {
+    "id": "DMSat",
+    "logo": "dmsat.png",
+    "title": "DM Sat"
+  },
+  "dom_kino": {
+    "id": "dom_kino",
+    "logo": "",
+    "title": "Дом кино"
+  },
+  "domashniy": {
+    "id": "",
+    "logo": "",
+    "title": "Домашний"
+  },
+  "dstv": {
+    "id": "DSTV",
+    "logo": "dstv.png",
+    "title": "DSTV"
+  },
+  "duga_tv": {
+    "id": "duga_tv",
+    "logo": "",
+    "title": "Duga TV"
+  },
+  "dw": {
+    "id": "DeutscheWelle",
+    "logo": "deutschewelle.png",
+    "title": "Deutsche welle"
+  },
+  "ekids": {
+    "id": "EKids",
+    "logo": "ekids.png",
+    "title": "Ekids"
+  },
+  "eurosport": {
+    "id": "Eurosport1",
+    "logo": "eurosport.png",
+    "title": "Eurosport"
+  },
+  "eurosport2": {
+    "id": "Eurosport2",
+    "logo": "eurosport2.png",
+    "title": "Eurosport 2 HD"
+  },
+  "evrokom": {
+    "id": "Eurocom",
+    "logo": "evrokom.png",
+    "title": "Evrokom"
+  },
+  "fan_tv_hd": {
+    "id": "FENTV",
+    "logo": "fentv.png",
+    "title": "Fen TV HD"
+  },
+  "fantasy": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Fantasy"
+  },
+  "fashion_tv": {
+    "id": "FashionTV",
+    "logo": "fashiontv.png",
+    "title": "Fashion TV"
+  },
+  "fen_folk_tv": {
+    "id": "FenFolk",
+    "logo": "fenfolk.png",
+    "title": "Fen Folk TV"
+  },
+  "filmbox_hd": {
+    "id": "FilmBoXtraHD",
+    "logo": "filmboxextra.png",
+    "title": "FILMBOX HD"
+  },
+  "filmplus": {
+    "id": "FPlus",
+    "logo": "fplus.png",
+    "title": "F+"
+  },
+  "filmplus_hd": {
+    "id": "FilmPlus",
+    "logo": "filmplus.png",
+    "title": "Film + HD"
+  },
+  "fine_living": {
+    "id": "FineLiving",
+    "logo": "finelivingnetwork.png",
+    "title": "Fine Living"
+  },
+  "fm_plus": {
+    "id": "fm_plus",
+    "logo": "fmplus.png",
+    "title": "FM+"
+  },
+  "folk_radio": {
+    "id": "",
+    "logo": "",
+    "title": "Folk Radio"
+  },
+  "folk_radio_nazdrave": {
+    "id": "",
+    "logo": "",
+    "title": "Folk radio Nazdrave"
+  },
+  "folklor_tv_hd": {
+    "id": "FolklorTV",
+    "logo": "folklortv.png",
+    "title": "Folklor TV"
+  },
+  "food_network_hd": {
+    "id": "FoodNetworkHD",
+    "logo": "foodnetwork.png",
+    "title": "Food network HD"
+  },
+  "fox": {
+    "id": "FOX",
+    "logo": "fox.png",
+    "title": "FOX"
+  },
+  "fox_crime": {
+    "id": "FOXCrime",
+    "logo": "foxcrime.png",
+    "title": "Fox Crime"
+  },
+  "fox_life": {
+    "id": "FOXLife",
+    "logo": "foxlife.png",
+    "title": "Fox Life"
+  },
+  "france_2": {
+    "id": "france_2",
+    "logo": "",
+    "title": "France 2"
+  },
+  "france_24": {
+    "id": "france_24",
+    "logo": "",
+    "title": "France 24"
+  },
+  "fresh": {
+    "id": "fresh",
+    "logo": "radiofresh.png",
+    "title": "Radio Fresh"
+  },
+  "history2": {
+    "id": "H2",
+    "logo": "h2.png",
+    "title": "H2"
+  },
+  "history_channel_hd": {
+    "id": "History",
+    "logo": "history.png",
+    "title": "History Channel HD"
+  },
+  "hit_tv": {
+    "id": "",
+    "logo": "",
+    "title": "Hit Mix Music"
+  },
+  "hmtv_hd": {
+    "id": "HMTV",
+    "logo": "hmtv.png",
+    "title": "TV 999 HD"
+  },
+  "hobby_lov_hd": {
+    "id": "HobbyLovHD",
+    "logo": "hobbylov.png",
+    "title": "Hobby lov HD"
+  },
+  "hobby_tv_hd": {
+    "id": "HobbyTVHD",
+    "logo": "hobbyhd.png",
+    "title": "Hobby TV HD"
+  },
+  "hobbytv": {
+    "id": "HobbyTV",
+    "logo": "hobitv.png",
+    "title": "Hobby TV"
+  },
+  "horizont": {
+    "id": "horizont",
+    "logo": "bnrhorizont.png",
+    "title": "horizont"
+  },
+  "house_music_radio": {
+    "id": "",
+    "logo": "",
+    "title": "House Music radio"
+  },
+  "hristobotev": {
+    "id": "hristobotev",
+    "logo": "bnrhristobotev.png",
+    "title": "Hristo Botev BNR"
+  },
+  "id_xtra": {
+    "id": "IDXtra",
+    "logo": "investigationdiscoveryxtra.png",
+    "title": "ID Xtra"
+  },
+  "in_kitchen_hd": {
+    "id": "in_kitchen_hd",
+    "logo": "",
+    "title": "Хайде в кухнята HD"
+  },
+  "in_life_hd": {
+    "id": "InLife",
+    "logo": "inlife.png",
+    "title": "In LIFE TV"
+  },
+  "jazzfm": {
+    "id": "",
+    "logo": "",
+    "title": "jazzfm"
+  },
+  "kalamariafm": {
+    "id": "",
+    "logo": "",
+    "title": "kalamariafm"
+  },
+  "kanal4": {
+    "id": "kanal4",
+    "logo": "kanal4.png",
+    "title": "Kanal 4"
+  },
+  "kanal_3": {
+    "id": "Kanal3",
+    "logo": " kanal3.png",
+    "title": "Kanal 3"
+  },
+  "karusel": {
+    "id": "karusel",
+    "logo": "",
+    "title": "Карусель"
+  },
+  "kcn_music_2": {
+    "id": "music",
+    "logo": "music.png",
+    "title": "KCN Music 2"
+  },
+  "kcn_music_3": {
+    "id": "music",
+    "logo": "music.png",
+    "title": "KCN Svet+ 3"
+  },
+  "kika_hd": {
+    "id": "",
+    "logo": "",
+    "title": "KiKa HD"
+  },
+  "kinonova": {
+    "id": "KinoNova",
+    "logo": "kinonova.png",
+    "title": "KinoNova"
+  },
+  "kiss13": {
+    "id": "Kiss13",
+    "logo": "kiss13.png",
+    "title": "Kiss 13"
+  },
+  "magic_fm": {
+    "id": "MagicFM",
+    "logo": "magicfm.png",
+    "title": "Magic FM"
+  },
+  "magic_tv": {
+    "id": "MagicTV",
+    "logo": "magictv.png",
+    "title": "Magic TV"
+  },
+  "maq": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Maq"
+  },
+  "melody": {
+    "id": "",
+    "logo": "",
+    "title": "Melody"
+  },
+  "mezzo": {
+    "id": "Mezzo",
+    "logo": "mezzo.png",
+    "title": "Mezzo"
+  },
+  "mmtv": {
+    "id": "MMTV",
+    "logo": "mmtv.png",
+    "title": "MM TV"
+  },
+  "mtv_hits": {
+    "id": "MTVHits",
+    "logo": "mtvhits.png",
+    "title": "MTV Hits"
+  },
+  "mtv_rock": {
+    "id": "MTVRocks",
+    "logo": "mtvrocks.png",
+    "title": "MTV Rock"
+  },
+  "musica": {
+    "id": "",
+    "logo": "",
+    "title": "Музыка"
+  },
+  "n24": {
+    "id": "",
+    "logo": "",
+    "title": "N24"
+  },
+  "nashe_kino": {
+    "id": "nashe_kino",
+    "logo": "",
+    "title": "Nashe kino"
+  },
+  "nat_geo_hd": {
+    "id": "NatGeo",
+    "logo": "natgeo.png",
+    "title": "NGC HD"
+  },
+  "nat_geo_wild": {
+    "id": "NatGeoWild",
+    "logo": "natgeowild.png",
+    "title": "National Geogrphic WILD HD"
+  },
+  "ndr_blue": {
+    "id": "",
+    "logo": "",
+    "title": "NDR Blue"
+  },
+  "nick_jr": {
+    "id": "NickJr",
+    "logo": "nickjr.png",
+    "title": "Nick Jr."
+  },
+  "nick_jr_eng": {
+    "id": "NickJr",
+    "logo": "nickjr.png",
+    "title": "Nick Jr. eng"
+  },
+  "nickelodeon": {
+    "id": "Nickelodeon",
+    "logo": "nickelodeon.png",
+    "title": "Nickelodeon"
+  },
+  "nickelodeon_eng": {
+    "id": "Nickelodeon",
+    "logo": "nickelodeon.png",
+    "title": "Nickelodeon eng"
+  },
+  "njoy": {
+    "id": "",
+    "logo": "",
+    "title": "njoy"
+  },
+  "nova": {
+    "id": "Nova",
+    "logo": "novasport.png",
+    "title": "Radio Nova"
+  },
+  "novasporthd": {
+    "id": "NovaSport",
+    "logo": "novasport.png",
+    "title": "Nova Sport HD"
+  },
+  "novatv": {
+    "id": "Nova",
+    "logo": "novatv.png",
+    "title": "Nova TV"
+  },
+  "nrj": {
+    "id": "nrj",
+    "logo": "",
+    "title": "nrj"
+  },
+  "ntv_mir": {
+    "id": "",
+    "logo": "",
+    "title": "NTV MIR"
+  },
+  "ohota_riba": {
+    "id": "Ribalka",
+    "logo": "ohotairybalka.png",
+    "title": "Охота и рыбалка"
+  },
+  "one_hip_hop": {
+    "id": "",
+    "logo": "",
+    "title": "One Hip Hop"
+  },
+  "orf_2": {
+    "id": "",
+    "logo": "",
+    "title": "ORF 2"
+  },
+  "ot_blizo__hd": {
+    "id": "OtBlizoHD",
+    "logo": "",
+    "title": "От близо HD"
+  },
+  "payner": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Payner"
+  },
+  "perec": {
+    "id": "perec",
+    "logo": "",
+    "title": "Перец"
+  },
+  "perviy_kanal": {
+    "id": "PerviyKanal",
+    "logo": "perviykanal.png",
+    "title": "Perviy Kanal"
+  },
+  "planeta_folk": {
+    "id": "PlanetaFolk",
+    "logo": "planetafolk.png",
+    "title": "Planeta Folk"
+  },
+  "planetahd": {
+    "id": "PlanetaHD",
+    "logo": "planetahd.png",
+    "title": "Planeta HD"
+  },
+  "planetatv": {
+    "id": "Planeta",
+    "logo": "planetatv.png",
+    "title": "Planeta"
+  },
+  "po_tv_trakia": {
+    "id": "Trakiq",
+    "logo": "potv.png",
+    "title": "PO TV Trakia"
+  },
+  "power_fm": {
+    "id": "",
+    "logo": "",
+    "title": "Power FM"
+  },
+  "radio1": {
+    "id": "radio1",
+    "logo": "radio1.png",
+    "title": "Radio 1"
+  },
+  "radio1rock": {
+    "id": "radio1rock",
+    "logo": "radio1rock.png",
+    "title": "radio1rock"
+  },
+  "radio5_npo": {
+    "id": "",
+    "logo": "",
+    "title": "Radio5 nostalgia"
+  },
+  "radio_family": {
+    "id": "radio_family",
+    "logo": "",
+    "title": "Radio Family"
+  },
+  "radio_varna": {
+    "id": "radio_varna",
+    "logo": "",
+    "title": "Radio Varna"
+  },
+  "radiofocus": {
+    "id": "radiofocus",
+    "logo": "",
+    "title": "Radio Focus"
+  },
+  "radiovega": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Vega+"
+  },
+  "rai_uno": {
+    "id": "rai_uno",
+    "logo": "",
+    "title": "Rai Uno"
+  },
+  "rbulgaria_on_air": {
+    "id": "rbulgaria_on_air",
+    "logo": "",
+    "title": "Bulgaria On Air"
+  },
+  "ric": {
+    "id": "",
+    "logo": "",
+    "title": "RiC"
+  },
+  "ringbg": {
+    "id": "RING",
+    "logo": "ring.png",
+    "title": "Ring HD"
+  },
+  "roma_tv": {
+    "id": "roma_tv",
+    "logo": "",
+    "title": "Roma TV"
+  },
+  "rthevoice": {
+    "id": "rthevoice",
+    "logo": "thevoicetv.png",
+    "title": "The Voice"
+  },
+  "rtp_int": {
+    "id": "",
+    "logo": "",
+    "title": "RTP Int."
+  },
+  "rtr_planeta": {
+    "id": "rtr_planeta",
+    "logo": "",
+    "title": "PTP Планета"
+  },
+  "rtvi": {
+    "id": "",
+    "logo": "",
+    "title": "RTVi"
+  },
+  "russia_24": {
+    "id": "russia_24",
+    "logo": "",
+    "title": "Русия 24"
+  },
+  "russia_today": {
+    "id": "RussiaToday",
+    "logo": "russiatoday.png",
+    "title": "Russia Today"
+  },
+  "skat": {
+    "id": "Skat",
+    "logo": "skat.png",
+    "title": "Skat"
+  },
+  "sky_radio_greece": {
+    "id": "",
+    "logo": "",
+    "title": "SKY radio Greece"
+  },
+  "sportaltv": {
+    "id": "sportaltv",
+    "logo": "sportalbg.png",
+    "title": "Sportal HD"
+  },
+  "stara_zagora_tv": {
+    "id": "",
+    "logo": "",
+    "title": "TV Stara Zagora"
+  },
+  "stoychev": {
+    "id": "",
+    "logo": "",
+    "title": "Stoychev HD"
+  },
+  "sweet_radio": {
+    "id": "",
+    "logo": "",
+    "title": "Sweet Radio"
+  },
+  "tangramegarock": {
+    "id": "tangramegarock",
+    "logo": "tangramegarock.png",
+    "title": "tangramegarock"
+  },
+  "telekafe": {
+    "id": "",
+    "logo": "",
+    "title": "Телекафе"
+  },
+  "the_voice": {
+    "id": "TheVoice",
+    "logo": "thevoicetv.png",
+    "title": "The Voice HD"
+  },
+  "tiankov_folk_hd": {
+    "id": "TiankovFolk",
+    "logo": "tiankovfolk.png",
+    "title": "Tiankov Folk HD"
+  },
+  "tiankov_misic_hd": {
+    "id": "music",
+    "logo": "misic.png",
+    "title": "Tiankov Orient HD"
+  },
+  "tlc": {
+    "id": "TLC",
+    "logo": "tlc.png",
+    "title": "TLC"
+  },
+  "top_100_station": {
+    "id": "",
+    "logo": "",
+    "title": "Top 100 Station"
+  },
+  "travel_channel": {
+    "id": "TravelChannel",
+    "logo": "travelchannel.png",
+    "title": "Travel Channel"
+  },
+  "travel_tv": {
+    "id": "Travel",
+    "logo": "traveltv.png",
+    "title": "Travel TV"
+  },
+  "travel_tv_hd": {
+    "id": "thisisbg",
+    "logo": "travelhd.png",
+    "title": "This is Bulgaria HD"
+  },
+  "tv1000": {
+    "id": "TV1000",
+    "logo": "tv1000.png",
+    "title": "TV1000"
+  },
+  "tv1_hd": {
+    "id": "TV1",
+    "logo": "tv1.png",
+    "title": "TV 1 HD"
+  },
+  "tv5": {
+    "id": "tv5",
+    "logo": "tv5.png",
+    "title": "TV5"
+  },
+  "tv_rodina_hd": {
+    "id": "",
+    "logo": "",
+    "title": "TV Rodina HD"
+  },
+  "tv_shumen": {
+    "id": "",
+    "logo": "",
+    "title": "TV Shumen"
+  },
+  "tv_stara_zagora": {
+    "id": "TVSTZ",
+    "logo": "tvstz.png",
+    "title": "TV Zagora"
+  },
+  "tve": {
+    "id": "",
+    "logo": "",
+    "title": "TVE"
+  },
+  "tvevropa": {
+    "id": "tveurope",
+    "logo": "tveuropa.png",
+    "title": "ТВ Европа"
+  },
+  "tvoeto_radio": {
+    "id": "",
+    "logo": "",
+    "title": "Tvoeto Radio"
+  },
+  "tvplus": {
+    "id": "TVPlus",
+    "logo": "tvplus.png",
+    "title": "TV+"
+  },
+  "tvt": {
+    "id": "TVT",
+    "logo": "tvt.png",
+    "title": "TVT"
+  },
+  "ultra": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Ultra"
+  },
+  "veronika": {
+    "id": "veronika",
+    "logo": "",
+    "title": "veronika"
+  },
+  "veselina": {
+    "id": "",
+    "logo": "",
+    "title": "Veselina"
+  },
+  "vh1": {
+    "id": "VH1",
+    "logo": "vh1.png",
+    "title": "VH1"
+  },
+  "vh1_classic": {
+    "id": "VH1Classic",
+    "logo": "vh1classic.png",
+    "title": "VH1 Classic"
+  },
+  "viasat_explorer": {
+    "id": "ViasatExplorer",
+    "logo": "viasatexplore.png",
+    "title": "Viasat Explorer"
+  },
+  "viasat_history": {
+    "id": "ViasatHistory",
+    "logo": "viasathistory.png",
+    "title": "Viasat History"
+  },
+  "viasat_nature": {
+    "id": "ViasatNature",
+    "logo": "viasatnature.png",
+    "title": "Viasat Nature"
+  },
+  "vitosha": {
+    "id": "vitosha",
+    "logo": "",
+    "title": "vitosha"
+  },
+  "wness_tv": {
+    "id": "wness",
+    "logo": "wnesstv.png",
+    "title": "WNESS TV HD"
+  },
+  "zorana": {
+    "id": "",
+    "logo": "",
+    "title": "Radio Zorana"
+  },
+  "zrock": {
+    "id": "ZRock",
+    "logo": "zrock.png",
+    "title": "zrock"
+  }
+}
