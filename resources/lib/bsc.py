@@ -55,7 +55,7 @@ class dodat():
     self.__DEBUG_EN = dbg
     self.__t = timeout
     self.__BLOCK_SIZE = 16
-    self.__URL_LIST = base + '/tv/full/live'
+    self.__URL_LIST = base + '/tv/pcweb/live'
     self.__URL_EPG  = base + '/epg/short'
     self.__js = None
     self.__app_version = ver
@@ -256,7 +256,6 @@ class dodat():
       if self.__gen_epg:
         w.addChannel(
                     {'display-name': [(ch['title'], u'bg')],
-                    'icon': [{'src': ch['logo_selected']}],
                     'id': ch['epg_name'],
                     'url': ['https://test.iptv.bulsat.com']}
                     )
@@ -268,9 +267,7 @@ class dodat():
                           'title': [(p['title'], u'')],
                           'desc': [(p['desc'], u'')],
                           'category': [(ch['genre'], u'')],
-                          'channel': ch['epg_name'],
-                          'video': {'quality': ch['quality']},
-                          'rating': [{'value': ch['pg']}]}
+                          'channel': ch['epg_name']}
                         )
 
     return dat, self.__UA['User-Agent']
