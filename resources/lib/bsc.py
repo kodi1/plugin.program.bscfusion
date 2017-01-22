@@ -46,13 +46,13 @@ class dodat():
 
     self.__log_in = {}
     self.__p_data = {
-                'user' : ['',''],
-                'device_id' : ['', os_id],
-                'device_name' : ['', os_id],
-                'os_version' : ['', os_id],
-                'os_type' : ['', os_id],
-                'app_version' : ['', app_ver],
-                'pass' : ['',''],
+                'user' : [None,''],
+                'device_id' : [None, os_id],
+                'device_name' : [None, os_id],
+                'os_version' : [None, os_id],
+                'os_type' : [None, os_id],
+                'app_version' : [None, app_ver],
+                'pass' : [None,''],
                 }
     self.__path = path
     self.__refresh = int(cachetime * 60 * 60)
@@ -123,7 +123,7 @@ class dodat():
 
   def __log_out(self):
     r = self.__s.post(self.__URL_LOGIN, timeout=self.__t,
-          headers=self.__UA, files={'logout': ['','1']})
+          headers=self.__UA, files={'logout': [None,'1']})
 
     self.__log_dat(r.request.headers)
     self.__log_dat(r.request.body)
