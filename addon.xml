@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<addon id="plugin.program.bscfusion" name="Fusion TV" version="0.0.2s" provider-name="kodi1">
+<addon id="plugin.program.bscfusion" name="Fusion TV" version="0.0.2t" provider-name="kodi1">
   <requires>
     <import addon="xbmc.python" version="2.19.0"/>
     <import addon="script.module.requests" version="1.1.0"/>
@@ -8,7 +8,7 @@
   </requires>
   <extension point="xbmc.service" library="service.py" start="start" />
   <extension point="xbmc.addon.metadata">
-        <summary>Bulsat Fusion for Kodi/HTS Tvheadend</summary>
+        <summary>Bulsat Fusion for Kodi/HTS Tvheadend/m3u8</summary>
         <summary lang="en">Add Fusion Tvheadend</summary>
         <description lang="en">It is not official addon from provider. It was made just for fun. You were warned.[CR]Thanks to otem, Majide and barev</description>
         <disclaimer lang="en">Some parts of this addon may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>

@@ -78,6 +78,23 @@ def err_responce(s):
     s.wfile.write("<html><body><h1>Error!</h1></body></html>")
     s.wfile.write("Path:\n%s\nHeader:\n%s" % (s.path, s.headers))
 
+def pls(s):
+    _list = '#EXTM3U\n\n'
+
+    if 'Kodi' in s.headers['User-Agent']:
+      for k, v in s.server.d['dat'].iteritems():
+          _radio = 'False'
+          if u'Радио' in v['group']:
+              _radio = 'True'
+
+          _list += '#EXTINF:-1 radio="%s" group-title="%s" tvg-id="%s",%s\n' % (_radio, v['group'], v['id'], v['title'],)
+          _list += 'http://%s/id/%s\n' % ( s.headers['Host'], v['id'])
+
+    s.send_response(200)
+    s.send_header("Content-type", "video/mpegurl")
+    s.end_headers()
+    s.wfile.write(_list.encode('utf-8'))
+
 def dump_ch(s):
     _json_data = {
                     "service": "bsc_iptv",
@@ -102,7 +119,8 @@ def dump_ch(s):
 map_cmd = {
     'reboot' : reboot,
     'id': get_id,
-    'dumpch': dump_ch
+    'dumpch': dump_ch,
+    'm3u8' : pls,
     }
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -115,7 +133,10 @@ class MyHandler(BaseHTTPRequestHandler):
       elif len(spath) == 3:
           map_cmd.get(spath[1], err_responce)(self, spath[2])
           return
-      err_responce(self, None)
+      err_responce(self)
+
+    def do_HEAD(self):
+        self.do_GET()
 
     def log_message(self, format, *args):
         if ch_cb:
