@@ -68,6 +68,7 @@ def reboot(s, arg= None):
 
 def get_id(s, arg):
     s.send_response(302)
+    s.send_header("Content-type", "application/x-mpegurl")
     s.send_header("Location", s.server.d.get('dat', {}).get(arg, {'url': 'http://google.bg'})['url'])
     s.end_headers()
 
@@ -81,7 +82,7 @@ def err_responce(s):
 def pls(s):
     _list = '#EXTM3U\n\n'
 
-    if 'Kodi' in s.headers['User-Agent']:
+    if 'Kodi' in s.headers['User-Agent'] or 'TVH' in s.headers['User-Agent']:
       for k, v in s.server.d['dat'].iteritems():
           _radio = 'False'
           if u'Радио' in v['group']:
@@ -91,7 +92,7 @@ def pls(s):
           _list += 'http://%s/id/%s\n' % ( s.headers['Host'], v['id'])
 
     s.send_response(200)
-    s.send_header("Content-type", "video/mpegurl")
+    s.send_header("Content-type", "application/x-mpegurl")
     s.end_headers()
     s.wfile.write(_list.encode('utf-8'))
 

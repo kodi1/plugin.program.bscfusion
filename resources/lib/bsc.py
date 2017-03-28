@@ -33,7 +33,7 @@ class dodat():
                 'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.5',
                 'Accept-Encoding': 'gzip, deflate',
-                'Referer': 'https://test.iptv.bulsat.com/iptv.php',
+                'Referer': 'https://test.iptv.bulsat.com/televizia.php',
                 'Origin': 'https://test.iptv.bulsat.com',
                 'Connection': 'keep-alive',
                 'Pragma': 'no-cache',
