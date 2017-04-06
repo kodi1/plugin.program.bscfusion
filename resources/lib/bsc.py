@@ -29,14 +29,14 @@ class dodat():
 
     self.__UA = {
                 'Host': 'api.iptv.bulsat.com',
-                'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
-                'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0',
+                'Accept':'*/*',
                 'Accept-Language': 'en-US,en;q=0.5',
-                'Accept-Encoding': 'gzip, deflate',
-                'Referer': 'https://test.iptv.bulsat.com/televizia.php',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Referer': 'https://test.iptv.bulsat.com/iptv-login.php',
                 'Origin': 'https://test.iptv.bulsat.com',
                 'Connection': 'keep-alive',
-                'Pragma': 'no-cache',
+                'DNT': '1'
                 }
 
     self.__log_in = {}
