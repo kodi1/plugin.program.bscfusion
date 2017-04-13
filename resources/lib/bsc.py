@@ -111,6 +111,17 @@ class dodat():
   def __goforit(self):
     if self.__cb:
       self.__cb({'pr': 10, 'str': 'Session'})
+
+    #_head={}
+    #_head.update(self.__UA)
+    #_head.update(
+                  #{
+                    #'Access-Control-Request-Method': 'POST',
+                    #'Access-Control-Request-Headers': 'ssbulsatapi',
+                  #}
+                #)
+    ##r = self.__s.options(self.__URL_LOGIN, timeout=self.__t,
+                ##headers=_head)
     r = self.__s.post(self.__URL_LOGIN, timeout=self.__t,
                 headers=self.__UA)
 
@@ -207,10 +218,10 @@ class dodat():
           from HTMLParser import HTMLParser as h
           self.__js = json.loads(h().unescape(json.dumps(self.__js).decode(self.__char_set)))
 
-          self.__log_out()
-          if r.status_code != requests.codes.ok:
-            self.__log_dat('Error status code: %d' % (r.status_code, ))
-            raise Exception("FetchFail")
+          #self.__log_out()
+          #if r.status_code != requests.codes.ok:
+            #self.__log_dat('Error status code: %d' % (r.status_code, ))
+            #raise Exception("FetchFail")
 
         else:
           raise Exception("LoginFail")
