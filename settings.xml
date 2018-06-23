@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <!-- General -->
+    <category label="30300">
+      <setting label="30301" type="text"   id="username" default=""/>
+      <setting label="30302" type="text"   id="password" option="hidden" default=""/>
+      <setting label="30303" type="slider" id="refresh" default="8" range="0.5,0.5,10" option="float" />
+      <setting label="30304" type="slider" id="timeout" default="10.0" range="0.5,0.5,20" option="float" />
+      <setting label="30305" type="text"   id="base" default="https://api.iptv.bulsat.com"/>
+      <setting label=""      type="bool"   id="firstrun" visible="false" default="true"/>
+    </category>
+    <category label="30400">
+      <setting label="30401" type="bool"   id="xxx" default="true"/>
+      <setting label="30402" type="enum"   id="dev_id" values="Pc|Samsung|Lg|Panasonic|Android" default="0"/>
+      <setting label="30403" type="text"   id="app_ver" default="0.01"/>
+      <setting label="30404" type="bool"   id="dbg" default="false"/>
+    </category>
+</settings>
