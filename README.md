@@ -15,7 +15,7 @@ How it works:
  - By default, connecting to tvheadend web API will not prompt for credentials.  
  - Enable the epggrabber module XMLTV: Configuration / Channel/EPG / EPG Grabber Modules -> and enable External: XMLTV.
  - Locate the xmltv.sock file that got created, for example on Gentoo Linux this falls under: /etc/tvheadend/epggrab/xmltv.sock, adjust filesystem ACLs if needed so you can write to it.
- - Obtain the external EPG, on Linux run: wget -O epg.xml.gz http://epg.kodibg.org/dl.php
+ - Obtain the external EPG, on Linux run: ```wget -O epg.xml.gz http://epg.kodibg.org/dl.php```
  - Upload the EPG into tvheadend via the xmltv socket interface, on Linux run (with root user or another one that has write access to the socket):
    ```zcat epg.xml.gz | nc -q 1 -U /etc/tvheadend/epggrab/xmltv.sock``` OR  
    run ```./epg_fetch_upload.sh``` script.  
@@ -25,7 +25,7 @@ How it works:
 5.) To see if the plugin works, manually load http://<KODI_IP/FQDN>:8888/dumpch, ie http://127.0.0.1:8888/dumpch. This needs to generate a json list of all the available channels under your subscription. If this works, you are ready to proceed with the tvheadend mapping and integration. If it does not work, you should fix this before proceeding(see bottom).  
 6.) Run ```./map_to_hts.py [hts hostname/ip] [kodi hostname/ip]```  
  * kodi and tvheadend can be on different devices and IP addresses, but running them on 'localhost' may be the most standard use case.
- * This script requires python version 2.7 to be installed. It does not have to be the default python interpreter on the system, but needs to be available. If you have problems, just remove the new version 3.x and try running the script again or type: python2.7 map_to_hts.py [parameters*].
+ * This script requires python version 2.7 to be installed. It does not have to be the default python interpreter on the system, but needs to be available. If you have problems, just remove the new version 3.x and try running the script again or type: ```python2.7 map_to_hts.py [parameters*]```.
  * It may take a while for the muxes creation and services mapping to happen, be patient. This version of the script, runs 5 muxes at the same time for 15 seconds and then spawns another 5. On decent hardware and connection, this should be totally fine.
 
 7.) Run ```./update_channels.py [hts hostname/ip]```  
